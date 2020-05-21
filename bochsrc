@@ -10,13 +10,16 @@ romimage: file=/usr/share/bochs/BIOS-bochs-latest
 vgaromimage: file=/usr/share/bochs/VGABIOS-lgpl-latest
 
 # what disk images will be used
-floppya: 1_44=boot.img, status=inserted
+ata0-master: type=disk, path="boot.img", mode=flat
+#ata0: enabled=1, ioaddr1=0x1f0, ioaddr2=0x3f0, irq=14
+#floppya: 1_44=boot.img, status=inserted
 
 # choose the boot disk.
-boot: floppy
+#boot: floppy
+boot: disk
 
 # where do we send log messages?
-log: bochsout.txt
+log: bout.txt
 
 # disable the mouse
 mouse: enabled=0
